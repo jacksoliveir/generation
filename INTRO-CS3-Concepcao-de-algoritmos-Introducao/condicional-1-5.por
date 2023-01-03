@@ -1,4 +1,8 @@
 programa {
+  inclua biblioteca Texto --> txt
+  inclua biblioteca Matematica --> Mat
+
+
   // ECXERCICIO 1
   funcao inicio() {
     inteiro n
@@ -27,31 +31,31 @@ programa {
 		escolha(opcao){
 			caso 1:
 				escreva("\n Produto: Cachorro-quente")
-        escreva("\n Valor Total: R$ ", 10*qnt)
+        escreva("\n Valor Total: R$ ", Mat.arredondar(10*qnt,2))
 				pare
 			caso 2:
 				escreva("\n Produto: X-Salada")
-        escreva("\n Valor Total: R$ ", 15*qnt)				
+        escreva("\n Valor Total: R$ ", Mat.arredondar(15*qnt,2))				
         pare
 			caso 3:
 				escreva("\n Produto: X-Bacon")
-        escreva("\n Valor Total: R$ ", 18*qnt)
+        escreva("\n Valor Total: R$ ", Mat.arredondar(18*qnt,2))
         pare
 			caso 4:
 				escreva("\n Produto: Bauru")
-        escreva("\n Valor Total: R$ ", 12*qnt)
+        escreva("\n Valor Total: R$ ", Mat.arredondar(12*qnt,2))
         pare
 			caso 5:
 				escreva("\n Produto: Refrigerante")
-        escreva("\n Valor Total: R$ ", 8*qnt)				
+        escreva("\n Valor Total: R$ ", Mat.arredondar(8*qnt,2))				
         pare
 			caso 6:
 				escreva("\n Produto: Suco de Laranja")
-        escreva("\n Valor Total: R$ ", 13*qnt)				
+        escreva("\n Valor Total: R$ ", Mat.arredondar(13*qnt,2))				
         pare                        
 			caso contrario:
 				escreva("Opção inválida!")
-		} 
+		}
   }
   // EXERCICIO 3
   funcao inicio() {
@@ -75,7 +79,7 @@ programa {
 
     escreva("Digite o Salário: ")
     leia(salario)
-    
+
     se(salario < 0)
       escreva("valor inválido")
     senao{
@@ -83,54 +87,78 @@ programa {
         escreva("Isento")
       senao se((salario > 2000) e (salario <= 3000)){
         imposto = = (8 / 100) * salario
-        escreva("Imposto de Renda: ", imposto)
+        escreva("Imposto de Renda: ", Mat.arredondar(imposto, 2))
       }
       senao se((salario > 3000) e (salario <= 4500)){
         imposto = = (18 / 100) * salario
-        escreva("Imposto de Renda: ", imposto)
+        escreva("Imposto de Renda: ", Mat.arredondar(imposto, 2))
       }
       senao se(salario > 4500){
         imposto = = (28 / 100) * salario
-        escreva("Imposto de Renda: ", imposto)
+        escreva("Imposto de Renda: ", Mat.arredondar(imposto, 2))
       }   
     }     
   }
   //EXERCICIO 5
   funcao inicio() {
-    cadeia palavra1, palavra2, palavra3
+    cadeia tipo, classe, alimentacao
+    
+    escreva("Tipo do animal: vertebrado ou invertebrado: ")
+    leia(tipo)
+    tipo = txt.caixa_baixa(tipo)
 
-    leia(palavra1)
-    leia(palavra2)
-    leia(palavra3)
+    se(tipo == "vertebrado"){
+      escreva("Ave ou mamifero?")
+      leia(classe)
+      classe = txt.caixa_baixa(classe)
 
-    se(palavra1 == "vertebrado"){
-      se(palavra2 == "ave"){
-        se(palavra3 == "onivoro")
+      se(classe == "ave"){
+        escreva("onivoro ou carnivoro?")
+        leia(alimentacao)
+        alimentacao = txt.caixa_baixa(alimentacao)
+
+        se(alimentacao == "onivoro")
           escreva("Pomba")
-        senao se (palavra3 == "carnivoro")
+        senao se (alimentacao == "carnivoro")
           escreva("Águia")
       }
-      senao se(palavra2 == "mamifero"){
-        se(palavra3 == "onivoro")
+      senao se(classe == "mamifero"){
+        escreva("onivoro ou herbivoro?")
+        leia(alimentacao)
+        alimentacao = txt.caixa_baixa(alimentacao)
+
+        se(alimentacao == "onivoro")
           escreva("Homem")
-        senao se (palavra3 == "herbivoro")
+        senao se (alimentacao == "herbivoro")
           escreva("Vaca")
       }
     }
-    senao se(palavra1 == "invertebrado"){
-      se(palavra2 == "anelidio"){
-        se(palavra3 == "onivoro")
+    senao se(tipo == "invertebrado"){
+      escreva("anelidio ou inseto?")
+      leia(classe)
+      classe = txt.caixa_baixa(classe)
+
+      se(classe == "anelidio"){
+        escreva("onivoro ou hematofogo?")
+        leia(alimentacao)
+        alimentacao = txt.caixa_baixa(alimentacao)
+
+        se(alimentacao == "onivoro")
           escreva("Minhoca")
-        senao se (palavra3 == "hematogofo")
+        senao se (alimentacao == "hematogofo")
           escreva("Sanguessuga")
       }
-      senao se(palavra2 == "inseto"){
-        se(palavra3 == "herbivoro")
+      senao se(classe == "inseto"){
+        escreva("herbivoro ou hematofogo?")
+        leia(alimentacao)
+        alimentacao = txt.caixa_baixa(alimentacao)
+
+        se(alimentacao == "herbivoro")
           escreva("Lagarta")
-        senao se (palavra3 == "hematofogo")
+        senao se (alimentacao == "hematofogo")
           escreva("Pulga")
       }
     }
-  }    
+  }
 
 }
