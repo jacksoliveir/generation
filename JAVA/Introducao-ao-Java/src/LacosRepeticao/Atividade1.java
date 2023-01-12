@@ -6,9 +6,9 @@ public class Atividade1 {
     public static void main(String[] args) {
         int n1, n2;
         Scanner entrada = new Scanner(System.in);
-        System.out.println("Digite o primeiro número do intervalo: ");
+        System.out.print("Digite o primeiro número do intervalo: ");
         n1 = entrada.nextInt();
-        System.out.println("Digite o ultimo número do intervalo: ");
+        System.out.print("Digite o ultimo número do intervalo: ");
         n2 = entrada.nextInt();
 
         if (n1 < n2) {
@@ -19,7 +19,5 @@ public class Atividade1 {
         }else {
             System.out.println("Intervalo inválido!");
         }
-
-
     }
 }

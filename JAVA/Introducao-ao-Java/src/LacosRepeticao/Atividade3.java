@@ -9,7 +9,7 @@ public class Atividade3 {
         while (idade > -1){
             System.out.print("Digite uma idade: ");
             idade = entrada.nextInt();
-            if(idade < 0)
+            if(idade <= 0)
                 break;
             else if (idade < 21)
                 jovens++;
@@ -18,6 +18,5 @@ public class Atividade3 {
         }
         System.out.println("Total de pessoas menores de 21 anos: "+ jovens);
         System.out.println("Total de pessoas maiores de 50 anos: "+ idosos);
-
     }
 }

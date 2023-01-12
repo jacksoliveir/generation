@@ -17,6 +17,5 @@ public class Atividade2 {
         }
         System.out.println("Total de números pares: " + pares);
         System.out.println("Total de números ímpares: " + impares);
-
     }
 }
